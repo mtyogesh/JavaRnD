@@ -12,12 +12,17 @@ public class MyLinkedList {
 
 		list.print();
 		list.reverse();
+		list.print();
+		list.head = list.reverseR(list.head, null);
+		list.print();
+		list.head = list.reverseR1(list.head);
+		list.print();
+		
 
 		/*
 		 * Node n1 = list.head; Node n2 = list.head.next; //list.head = null;
 		 * list.reverse(n1, n2);
 		 */
-		list.print();
 	}
 
 	Node head;
@@ -38,12 +43,17 @@ public class MyLinkedList {
 	}
 
 	private void print() {
-		System.out.println();
+		StringBuilder res = new StringBuilder("[");
 		Node n = head;
 		while (n != null) {
-			System.out.printf("%4s", n.value);
+			res.append(n.value);
+			if(n.next != null) {
+				res.append(", ");
+			}
 			n = n.next;
 		}
+		res.append("]");
+		System.out.println(res);
 	}
 
 	private void reverse() {
@@ -56,6 +66,28 @@ public class MyLinkedList {
 			n = t;
 		}
 		this.head = rn;
+	}
+	
+	private Node reverseR(Node c, Node p) {
+		if(c == null) {
+			return p;
+		}
+		Node t = c.next;
+		c.next = p;
+		p = c;
+		c = t;
+		return reverseR(c, p);
+	}
+	
+	private Node reverseR1(Node c) {
+		if(c == null || c.next == null) {
+			return c;
+		}
+		Node t = c.next;
+		c.next = null;
+		Node p = reverseR1(t);
+		t.next = c;
+		return p;
 	}
 
 	private void reverseRec(Node n1, Node n2) {

@@ -4,7 +4,7 @@ public class Fibonacci1 {
 
 	public static void main(String[] args) {
 		//System.out.println();
-		System.out.println(fibonacci(5));
+		System.out.println(fibonacci(6));
 		//System.out.println(fact(4));
 	}
 
