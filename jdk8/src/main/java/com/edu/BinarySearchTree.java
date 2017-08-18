@@ -44,6 +44,12 @@ public class BinarySearchTree {
 			}
 		}
 		
+		public void print() {
+			System.out.printf("%50s", root.data);
+			System.out.println();
+			//while
+		}
+		
 	}
 
 	static class Node<T> {
