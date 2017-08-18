@@ -46,9 +46,9 @@ public class Fibonacci1 {
 				count--;
 			}
 			count--;
-			return count == 0 ? fibSeriesNth(count, n1, n2) : fibSeriesNth(count, n2, n1 + n2);
+			return fibSeriesNth(count, n2, n1 + n2);
 		}
-		return n2;
+		return n1;
 	}
 
 	public static int fact(int number) {

@@ -14,7 +14,6 @@ public class Fibonacci {
 		// String result = fiboStream.map(BigInteger::toString).collect(Collectors.joining(" "));
 		// System.out.println(result);
 
-		
 		//fiboStream.forEach(System.out::println);
 		
 		fiboStream.forEach(e -> System.out.println(e));
