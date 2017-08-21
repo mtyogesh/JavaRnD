@@ -17,7 +17,6 @@ public class MyLinkedList {
 		list.print();
 		list.head = list.reverseR1(list.head);
 		list.print();
-		
 
 		/*
 		 * Node n1 = list.head; Node n2 = list.head.next; //list.head = null;
@@ -47,7 +46,7 @@ public class MyLinkedList {
 		Node n = head;
 		while (n != null) {
 			res.append(n.value);
-			if(n.next != null) {
+			if (n.next != null) {
 				res.append(", ");
 			}
 			n = n.next;
@@ -67,9 +66,9 @@ public class MyLinkedList {
 		}
 		this.head = rn;
 	}
-	
+
 	private Node reverseR(Node c, Node p) {
-		if(c == null) {
+		if (c == null) {
 			return p;
 		}
 		Node t = c.next;
@@ -78,9 +77,9 @@ public class MyLinkedList {
 		c = t;
 		return reverseR(c, p);
 	}
-	
+
 	private Node reverseR1(Node c) {
-		if(c == null || c.next == null) {
+		if (c == null || c.next == null) {
 			return c;
 		}
 		Node t = c.next;

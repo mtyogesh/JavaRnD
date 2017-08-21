@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * * Simple Java program to demonstrate How to use wait, notify and notifyAll() * method in Java by solving producer consumer problem. *
- * * @author Javin Paul
+ * * Simple Java program to demonstrate How to use wait, notify and notifyAll()
+ * * method in Java by solving producer consumer problem. * * @author Javin Paul
  */
 public class ProducerConsumerInJava {
 	public static void main(String args[]) {
@@ -27,8 +27,9 @@ public class ProducerConsumerInJava {
 }
 
 /**
- * * Producer Thread will keep producing values for Consumer * to consumer. It will use wait() method when Queue is full * and use notify()
- * method to send notification to Consumer * Thread. * * @author WINDOWS 8 *
+ * * Producer Thread will keep producing values for Consumer * to consumer. It
+ * will use wait() method when Queue is full * and use notify() method to send
+ * notification to Consumer * Thread. * * @author WINDOWS 8 *
  */
 class Producer extends Thread {
 	private Queue<Integer> queue;
@@ -49,7 +50,8 @@ class Producer extends Thread {
 			synchronized (queue) {
 				while (queue.size() == maxSize) {
 					try {
-						System.out.println("Queue is full, " + "Producer thread waiting for " + "consumer to take something from queue");
+						System.out.println("Queue is full, " + "Producer thread waiting for "
+								+ "consumer to take something from queue");
 						queue.wait();
 					} catch (Exception ex) {
 						ex.printStackTrace();
@@ -70,8 +72,10 @@ class Producer extends Thread {
 }
 
 /**
- * * Consumer Thread will consumer values form shared queue. * It will also use wait() method to wait if queue is * empty. It will also use
- * notify method to send * notification to producer thread after consuming values * from queue. * * @author WINDOWS 8 *
+ * * Consumer Thread will consumer values form shared queue. * It will also use
+ * wait() method to wait if queue is * empty. It will also use notify method to
+ * send * notification to producer thread after consuming values * from queue. *
+ * * @author WINDOWS 8 *
  */
 class Consumer extends Thread {
 	private Queue<Integer> queue;
@@ -88,7 +92,8 @@ class Consumer extends Thread {
 		while (true) {
 			synchronized (queue) {
 				while (queue.isEmpty()) {
-					System.out.println("Queue is empty," + "Consumer thread is waiting" + " for producer thread to put something in queue");
+					System.out.println("Queue is empty," + "Consumer thread is waiting"
+							+ " for producer thread to put something in queue");
 					try {
 						queue.wait();
 					} catch (Exception ex) {
@@ -107,4 +112,5 @@ class Consumer extends Thread {
 	}
 }
 
-// Read more:http:// javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html#ixzz4nThHbvvt
+// Read more:http://
+// javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html#ixzz4nThHbvvt

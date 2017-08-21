@@ -1,7 +1,6 @@
 package com.edu;
 
 import java.math.BigInteger;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Fibonacci {
@@ -9,13 +8,16 @@ public class Fibonacci {
 	private static long number = 20;
 
 	public static void main(String[] args) {
-		Stream<BigInteger> fiboStream = Stream.iterate(new Tuple<>(BigInteger.ONE, BigInteger.ONE), x -> new Tuple<>(x._2, x._1.add(x._2)))
+		Stream<BigInteger> fiboStream = Stream
+				.iterate(new Tuple<>(BigInteger.ONE, BigInteger.ONE), x -> new Tuple<>(x._2, x._1.add(x._2)))
 				.limit(number).map(x -> x._1);
-		// String result = fiboStream.map(BigInteger::toString).collect(Collectors.joining(" "));
+		// String result =
+		// fiboStream.map(BigInteger::toString).collect(Collectors.joining("
+		// "));
 		// System.out.println(result);
 
-		//fiboStream.forEach(System.out::println);
-		
+		// fiboStream.forEach(System.out::println);
+
 		fiboStream.forEach(e -> System.out.println(e));
 	}
 
